@@ -1,0 +1,41 @@
+.sidebar {
+  background: $imdb-panel;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  color: $imdb-text;
+  padding: 1.5rem;
+}
+
+.sidebar__section + .sidebar__section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+}
+
+.sidebar__title {
+  font-family: $headers-font;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.sidebar__link {
+  color: $imdb-muted;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  text-decoration: none;
+}
+
+.sidebar__link:hover {
+  color: $imdb-text;
+}
+
+.sidebar__badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: $imdb-yellow;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+}
