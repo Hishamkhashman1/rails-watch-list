@@ -1,0 +1,41 @@
+<section class="panel panel--imdb">
+  <div class="panel-header">
+    <div>
+      <p class="eyebrow">List details</p>
+      <h1><%= @list.name %></h1>
+    </div>
+    <div class="panel-actions">
+      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+      <%= link_to "Back to lists", lists_path, class: "btn btn-ghost" %>
+    </div>
+  </div>
+
+  <div class="stack">
+    <% @list.bookmarks.each do |bookmark| %>
+      <article class="bookmark-card bookmark-card--imdb">
+        <div class="bookmark-poster">
+          <% if bookmark.movie.poster_url.present? %>
+            <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %> poster">
+          <% else %>
+            <div class="list-card-fallback">No poster</div>
+          <% end %>
+        </div>
+        <div class="bookmark-main">
+          <div class="bookmark-meta">
+            <h3><%= bookmark.movie.title %></h3>
+            <% if bookmark.movie.rating.present? %>
+              <span class="rating">★ <%= bookmark.movie.rating %></span>
+            <% end %>
+          </div>
+          <p><%= bookmark.comment %></p>
+        </div>
+        <%= button_to "Remove", bookmark_path(bookmark), method: :delete, class: "btn btn-outline" %>
+      </article>
+    <% end %>
+    <% if @list.bookmarks.empty? %>
+      <div class="empty-state">
+        <p>No movies yet. Add the first one to kick off this list.</p>
+      </div>
+    <% end %>
+  </div>
+</section>

@@ -11,6 +11,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="site-header">
+      <div class="shell">
+        <div class="brand">
+          <span class="brand-mark">RL</span>
+          <span class="brand-text">Bro, this is a Watch List</span>
+        </div>
+        <nav class="site-nav">
+          <%= link_to "Lists", lists_path, class: "nav-link" %>
+          <%= link_to "New list", new_list_path, class: "nav-link nav-link--accent" %>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <%= yield %>
+    </main>
   </body>
 </html>

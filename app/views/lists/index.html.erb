@@ -1,0 +1,36 @@
+<section class="hero hero--imdb">
+  <div>
+    <p class="eyebrow">My personal watchlist</p>
+    <h1>Create a list you love 🍿 </h1>
+    <p class="lead">Track favorites, build marathons, and keep your queue sharp.</p>
+  </div>
+  <div class="hero-actions">
+    <%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+  </div>
+</section>
+
+<section class="panel panel--imdb">
+  <div class="panel-header">
+    <h2>All Lists</h2>
+    <span class="badge"><%= @lists.count %> total</span>
+  </div>
+
+  <div class="card-grid">
+    <% @lists.each do |list| %>
+      <% poster_url = list.movies.first&.poster_url %>
+      <%= link_to list_path(list), class: "list-card list-card--poster" do %>
+        <div class="list-card-media">
+          <% if poster_url.present? %>
+            <img src="<%= poster_url %>" alt="<%= list.name %> poster">
+          <% else %>
+            <div class="list-card-fallback">No poster</div>
+          <% end %>
+        </div>
+        <div class="list-card-body">
+          <h3><%= list.name %></h3>
+          <p><%= pluralize(list.movies.count, "movie") %> saved</p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

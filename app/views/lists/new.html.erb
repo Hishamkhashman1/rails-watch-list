@@ -1,0 +1,14 @@
+<section class="panel panel--form">
+  <div class="panel-header">
+    <div>
+      <p class="eyebrow">Start a new shelf</p>
+      <h1>Create a List</h1>
+    </div>
+    <%= link_to "Back to lists", lists_path, class: "btn btn-ghost" %>
+  </div>
+
+  <%= simple_form_for(@list, html: { class: "form-stack" }) do |f| %>
+    <%= f.input :name, placeholder: "Classic thrillers" %>
+    <%= f.button :submit, "Create list", class: "btn btn-primary" %>
+  <% end %>
+</section>

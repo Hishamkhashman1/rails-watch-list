@@ -1,0 +1,15 @@
+<section class="panel panel--form">
+  <div class="panel-header">
+    <div>
+      <p class="eyebrow">Add to list</p>
+      <h1><%= @list.name %></h1>
+    </div>
+    <%= link_to "Back to list", list_path(@list), class: "btn btn-ghost" %>
+  </div>
+
+  <%= simple_form_for([@list, @bookmark], html: { class: "form-stack" }) do |f| %>
+    <%= f.association :movie, collection: Movie.all, prompt: "Select a movie" %>
+    <%= f.input :comment, placeholder: "Why this belongs here..." %>
+    <%= f.button :submit, "Add movie", class: "btn btn-primary" %>
+  <% end %>
+</section>
