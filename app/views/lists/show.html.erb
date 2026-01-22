@@ -7,6 +7,7 @@
     <div class="panel-actions">
       <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
       <%= link_to "Back to lists", lists_path, class: "btn btn-ghost" %>
+      <%= button_to "Delete list", list_path(@list), method: :delete, class: "btn btn-outline", data: { turbo_confirm: "Delete this list and all its bookmarks?" } %>
     </div>
   </div>
 
