@@ -1,8 +1,32 @@
+require "json"
+require "net/http"
+require "uri"
+
 Bookmark.destroy_all
 List.destroy_all
 Movie.destroy_all
 
-movies = [
+def fetch_omdb_data(title, api_key)
+  return {} if api_key.nil? || api_key.strip.empty?
+
+  uri = URI("https://www.omdbapi.com/?t=#{URI.encode_www_form_component(title)}&apikey=#{api_key}")
+  response = Net::HTTP.get_response(uri)
+  return {} unless response.is_a?(Net::HTTPSuccess)
+
+  data = JSON.parse(response.body)
+  return {} unless data["Response"] == "True"
+
+  {
+    overview: data["Plot"].to_s == "N/A" ? nil : data["Plot"],
+    poster_url: data["Poster"].to_s == "N/A" ? nil : data["Poster"],
+    rating: data["imdbRating"].to_s == "N/A" ? nil : data["imdbRating"].to_f
+  }
+rescue StandardError => e
+  warn "OMDb fetch failed for #{title}: #{e.message}"
+  {}
+end
+
+catalog = [
   {
     title: "Dune",
     overview: "A gifted heir must travel to the most dangerous planet in the universe to save his family and people.",
@@ -76,6 +100,12 @@ movies = [
     rating: 9.0
   }
 ]
+
+omdb_key = ENV["OMDB_API_KEY"]
+movies = catalog.map do |entry|
+  omdb_data = fetch_omdb_data(entry[:title], omdb_key)
+  entry.merge(omdb_data.compact)
+end
 
 movies.each { |attributes| Movie.create!(attributes) }
 
