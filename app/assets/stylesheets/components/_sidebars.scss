@@ -1,13 +1,13 @@
 .sidebar {
-  background: $imdb-panel;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  color: $imdb-text;
+  background: linear-gradient(160deg, $sci-panel, $sci-panel-alt);
+  border: 1px solid rgba(71, 245, 201, 0.12);
+  border-radius: 18px;
+  color: $sci-text;
   padding: 1.5rem;
 }
 
 .sidebar__section + .sidebar__section {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(109, 235, 255, 0.15);
   margin-top: 1.4rem;
   padding-top: 1.4rem;
 }
@@ -20,7 +20,7 @@
 }
 
 .sidebar__link {
-  color: $imdb-muted;
+  color: $sci-muted;
   display: flex;
   justify-content: space-between;
   padding: 0.35rem 0;
@@ -28,13 +28,13 @@
 }
 
 .sidebar__link:hover {
-  color: $imdb-text;
+  color: $sci-text;
 }
 
 .sidebar__badge {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(109, 235, 255, 0.15);
   border-radius: 999px;
-  color: $imdb-yellow;
+  color: $sci-accent-strong;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.15rem 0.6rem;

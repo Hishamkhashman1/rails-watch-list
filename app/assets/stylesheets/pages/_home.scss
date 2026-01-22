@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+main.shell > section + section {
+  margin-top: 2.5rem;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.03em;
+}
+
+p {
+  line-height: 1.6;
+}
