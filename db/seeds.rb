@@ -6,73 +6,73 @@ movies = [
   {
     title: "Dune",
     overview: "A gifted heir must travel to the most dangerous planet in the universe to save his family and people.",
-    poster_url: "https://placehold.co/600x900/0b1120/6debff?text=Dune",
+    poster_url: "https://picsum.photos/seed/dune/600/900",
     rating: 8.1
   },
   {
     title: "Blade Runner 2049",
     overview: "A new blade runner unearths a long-buried secret that could plunge society into chaos.",
-    poster_url: "https://placehold.co/600x900/0b1120/47f5c9?text=Blade+Runner+2049",
+    poster_url: "https://picsum.photos/seed/blade-runner-2049/600/900",
     rating: 8.0
   },
   {
     title: "Interstellar",
     overview: "Explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-    poster_url: "https://placehold.co/600x900/0b1120/f95cf7?text=Interstellar",
+    poster_url: "https://picsum.photos/seed/interstellar/600/900",
     rating: 8.6
   },
   {
     title: "The Matrix",
     overview: "A hacker learns the world is a simulation and joins a rebellion to free humanity.",
-    poster_url: "https://placehold.co/600x900/0b1120/6debff?text=The+Matrix",
+    poster_url: "https://picsum.photos/seed/the-matrix/600/900",
     rating: 8.7
   },
   {
     title: "Rick and Morty",
     overview: "A cynical scientist drags his grandson on chaotic, interdimensional adventures.",
-    poster_url: "https://placehold.co/600x900/0b1120/47f5c9?text=Rick+and+Morty",
+    poster_url: "https://picsum.photos/seed/rick-and-morty/600/900",
     rating: 9.1
   },
   {
     title: "The Expanse",
     overview: "A detective and a rogue crew uncover a conspiracy that threatens the solar system.",
-    poster_url: "https://placehold.co/600x900/0b1120/f95cf7?text=The+Expanse",
+    poster_url: "https://picsum.photos/seed/the-expanse/600/900",
     rating: 8.5
   },
   {
     title: "Stranger Things",
     overview: "Kids in a small town confront a terrifying mystery tied to a secret lab and the Upside Down.",
-    poster_url: "https://placehold.co/600x900/0b1120/6debff?text=Stranger+Things",
+    poster_url: "https://picsum.photos/seed/stranger-things/600/900",
     rating: 8.7
   },
   {
     title: "Andor",
     overview: "A thief becomes a rebel spy in the early days of the uprising.",
-    poster_url: "https://placehold.co/600x900/0b1120/47f5c9?text=Andor",
+    poster_url: "https://picsum.photos/seed/andor/600/900",
     rating: 8.4
   },
   {
     title: "Cowboy Bebop",
     overview: "A bounty hunter crew drifts through space taking odd jobs and facing old ghosts.",
-    poster_url: "https://placehold.co/600x900/0b1120/6debff?text=Cowboy+Bebop",
+    poster_url: "https://picsum.photos/seed/cowboy-bebop/600/900",
     rating: 8.9
   },
   {
     title: "Akira",
     overview: "In Neo-Tokyo, a biker gang member's powers spiral out of control.",
-    poster_url: "https://placehold.co/600x900/0b1120/f95cf7?text=Akira",
+    poster_url: "https://picsum.photos/seed/akira/600/900",
     rating: 8.0
   },
   {
     title: "Ghost in the Shell",
     overview: "A cyborg officer hunts a mysterious hacker in a hyper-connected future.",
-    poster_url: "https://placehold.co/600x900/0b1120/47f5c9?text=Ghost+in+the+Shell",
+    poster_url: "https://picsum.photos/seed/ghost-in-the-shell/600/900",
     rating: 8.0
   },
   {
     title: "Attack on Titan",
     overview: "Humanity fights for survival against terrifying giants.",
-    poster_url: "https://placehold.co/600x900/0b1120/6debff?text=Attack+on+Titan",
+    poster_url: "https://picsum.photos/seed/attack-on-titan/600/900",
     rating: 9.0
   }
 ]
