@@ -5,12 +5,28 @@
   box-shadow: 0 20px 40px rgba(5, 7, 12, 0.7);
   color: $sci-text;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: card-float-in 0.7s ease both;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
   box-shadow: 0 30px 50px rgba(5, 7, 12, 0.8);
+  border-color: rgba(109, 235, 255, 0.5);
   transform: translateY(-4px);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(71, 245, 201, 0.25), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
 }
 
 .card__media {
@@ -56,4 +72,15 @@
   letter-spacing: 0.02em;
   padding: 0.25rem 0.75rem;
   text-transform: uppercase;
+}
+
+@keyframes card-float-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
