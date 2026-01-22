@@ -135,6 +135,67 @@ a {
   color: $sci-text;
 }
 
+.form-stack {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.form-control,
+.form-select,
+textarea.form-control {
+  background: rgba(7, 9, 15, 0.75);
+  border: 1px solid rgba(109, 235, 255, 0.25);
+  color: $sci-text;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+  border-color: $sci-accent;
+  box-shadow: 0 0 0 0.15rem rgba(71, 245, 201, 0.2);
+  color: $sci-text;
+}
+
+.omdb-search {
+  position: relative;
+}
+
+.omdb-results {
+  background: rgba(7, 9, 15, 0.9);
+  border: 1px solid rgba(109, 235, 255, 0.2);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.omdb-result {
+  background: transparent;
+  border: none;
+  color: $sci-text;
+  cursor: pointer;
+  display: block;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  width: 100%;
+}
+
+.omdb-result:hover {
+  background: rgba(71, 245, 201, 0.12);
+}
+
+.omdb-message {
+  color: $sci-muted;
+  padding: 0.6rem 0.9rem;
+}
+
+.omdb-selected {
+  color: $sci-accent-strong;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
 .card-grid {
   display: grid;
   gap: 1.5rem;

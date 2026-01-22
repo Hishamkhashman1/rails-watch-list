@@ -8,7 +8,30 @@
   </div>
 
   <%= simple_form_for([@list, @bookmark], html: { class: "form-stack" }) do |f| %>
-    <%= f.association :movie, collection: Movie.all, prompt: "Select a movie" %>
+    <div
+      class="omdb-search"
+      data-controller="omdb-search"
+      data-omdb-search-search-url-value="<%= omdb_search_path %>"
+      data-omdb-search-details-url-value="<%= omdb_details_path %>"
+    >
+      <label class="form-label" for="omdb-query">Movie</label>
+      <input
+        id="omdb-query"
+        class="form-control"
+        type="text"
+        placeholder="Search OMDb..."
+        autocomplete="off"
+        data-omdb-search-target="query"
+        data-action="input->omdb-search#queueSearch"
+      >
+      <div class="omdb-results" data-omdb-search-target="results"></div>
+      <div class="omdb-selected" data-omdb-search-target="selected"></div>
+      <%= f.hidden_field :movie_id, data: { omdb_search_target: "movieId" } %>
+      <%= f.hidden_field :movie_title, data: { omdb_search_target: "title" } %>
+      <%= f.hidden_field :movie_overview, data: { omdb_search_target: "overview" } %>
+      <%= f.hidden_field :movie_poster_url, data: { omdb_search_target: "posterUrl" } %>
+      <%= f.hidden_field :movie_rating, data: { omdb_search_target: "rating" } %>
+    </div>
     <%= f.input :comment, placeholder: "Why this belongs here..." %>
     <%= f.button :submit, "Add movie", class: "btn btn-primary" %>
   <% end %>

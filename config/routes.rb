@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:destroy]
 
+  get "omdb/search", to: "omdb#search"
+  get "omdb/details", to: "omdb#details"
+
   root "lists#index"
 end
